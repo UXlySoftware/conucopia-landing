@@ -19,6 +19,7 @@ const StyledButton = styled(Button, {
 
   [theme.breakpoints.down("sm")]: {
     padding: "0.2rem 1rem",
+    fontSize: "14px",
   },
 
   ...(variantType === "filled"

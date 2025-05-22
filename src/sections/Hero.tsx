@@ -61,7 +61,7 @@ const Hero = () => {
               variant="body1"
               sx={{
                 my: 2,
-                fontSize: { xs: "1.2rem", md: "1.5rem" },
+                fontSize: { xs: "1rem", md: "1.5rem" },
                 textAlign: { xs: "center", md: "start" },
                 fontFamily: `Helvetica`,
               }}
@@ -117,7 +117,7 @@ const Hero = () => {
         <Typography
           sx={{
             mt: 4,
-            fontSize: "1.5rem",
+            fontSize: { xs: "1rem", md: "1.5rem" },
             maxWidth: 500,
             fontFamily: `Helvetica`,
             color: "text.primary",
