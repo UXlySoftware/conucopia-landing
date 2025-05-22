@@ -12,6 +12,9 @@ import ARROW from "@coinucopia/assets/arrow.svg";
 import TELEGRAM from "@coinucopia/assets/telegram.svg";
 import HERO_IMAGE from "@coinucopia/assets/hero-image.png";
 import BLUE_ARROW from "@coinucopia/assets/blue-arrow.svg";
+import { motion } from "framer-motion";
+
+const MotionButton = motion(CoinucopiaButton);
 
 const Hero = () => {
   const theme = useTheme();
@@ -24,82 +27,101 @@ const Hero = () => {
         sx={{ pt: { xs: 1, md: 8 }, pl: { xs: 0, md: 3 } }}
         order={{ xs: 2, md: 1 }}
       >
-        <Typography
-          variant="h2"
-          component="h1"
-          sx={{
-            fontWeight: 700,
-            fontSize: { xs: 64, md: 80 },
-            lineHeight: 1.2,
-            textAlign: { xs: "center", md: "start" },
-          }}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.2 }}
         >
-          <Box
-            component="span"
-            sx={{ position: "relative", display: "inline-block" }}
+          <Typography
+            variant="h2"
+            component="h1"
+            sx={{
+              fontWeight: 700,
+              fontSize: { xs: 64, md: 80 },
+              lineHeight: 1.2,
+              textAlign: { xs: "center", md: "start" },
+            }}
           >
-            Launch
-            {!isMobile && (
-              <Box
-                component="img"
-                src={GLOW}
-                alt="glow"
-                sx={{
-                  position: "absolute",
-                  top: "-85px",
-                  right: "-60px",
-                }}
-              />
-            )}
-          </Box>
-          <br />
-          Memecoins
-        </Typography>
-        <Box display="flex" gap={1}>
-          <Box width="100%">
-            <Typography
-              variant="body1"
-              sx={{
-                my: 2,
-                fontSize: { xs: "1rem", md: "1.5rem" },
-                textAlign: { xs: "center", md: "start" },
-                fontFamily: `Helvetica`,
-              }}
+            <Box
+              component="span"
+              sx={{ position: "relative", display: "inline-block" }}
             >
-              Hype Telegram and go <br />
-              on-chain in 1 Tap.
-            </Typography>
-
-            <Stack>
-              <CoinucopiaButton variantType="filled">
-                Install Now on Telegram
-              </CoinucopiaButton>
+              Launch
               {!isMobile && (
-                <Box position="relative" display="inline-block">
-                  <Box
-                    component="img"
-                    src={BLUE_ARROW}
-                    alt="arrow"
-                    sx={{ pl: 2, pt: 1 }}
-                  />
-
-                  <Box
-                    component="img"
-                    src={TELEGRAM}
-                    alt="telegram"
-                    sx={{
-                      position: "absolute",
-                      left: 70,
-                      bottom: -50,
-                    }}
-                  />
-                </Box>
+                <motion.img
+                  src={GLOW}
+                  alt="glow"
+                  initial={{ y: 0 }}
+                  animate={{ y: [0, -10, 0] }}
+                  transition={{ duration: 2, repeat: Infinity }}
+                  style={{
+                    position: "absolute",
+                    top: "-80px",
+                    right: "-55px",
+                  }}
+                />
               )}
-            </Stack>
+            </Box>
+            <br />
+            Memecoins
+          </Typography>
+          <Box display="flex" gap={1}>
+            <Box width="100%">
+              <Typography
+                variant="body1"
+                sx={{
+                  my: 2,
+                  fontSize: { xs: "1rem", md: "1.5rem" },
+                  textAlign: { xs: "center", md: "start" },
+                  fontFamily: `Helvetica`,
+                }}
+              >
+                Hype Telegram and go <br />
+                on-chain in 1 Tap.
+              </Typography>
+
+              <Stack>
+                <MotionButton
+                  variantType="filled"
+                  fullWidth
+                  whileHover={{ scale: 1.04 }}
+                  whileTap={{ scale: 0.97 }}
+                  sx={{
+                    fontSize: { xs: 16, md: 20 },
+                    width: { xs: "100%", md: "auto" },
+                    padding: { xs: ".6rem 1rem" },
+                  }}
+                >
+                  Install Now on Telegram
+                </MotionButton>
+                {!isMobile && (
+                  <Box position="relative" display="inline-block">
+                    <Box
+                      component="img"
+                      src={BLUE_ARROW}
+                      alt="arrow"
+                      sx={{ pl: 2, pt: 1 }}
+                    />
+
+                    <Box
+                      component="img"
+                      src={TELEGRAM}
+                      alt="telegram"
+                      sx={{
+                        position: "absolute",
+                        left: 70,
+                        bottom: -50,
+                      }}
+                    />
+                  </Box>
+                )}
+              </Stack>
+            </Box>
+            {!isMobile && <Box component="img" src={ARROW} alt="arrow" />}
           </Box>
-          {!isMobile && <Box component="img" src={ARROW} alt="arrow" />}
-        </Box>
+        </motion.div>
       </Grid>
+
       <Grid
         size={{ xs: 12, md: 6 }}
         order={{ xs: 1, md: 2 }}
@@ -108,26 +130,41 @@ const Hero = () => {
         justifyContent="center"
         alignItems="center"
       >
-        <Box
+        {/* <Box
           component="img"
           src={HERO_IMAGE}
           alt="hero"
           sx={{ height: { xs: 285, md: 372 }, width: { xs: 332, md: 431 } }}
-        />
-        <Typography
-          sx={{
-            mt: 4,
-            fontSize: { xs: "1rem", md: "1.5rem" },
-            maxWidth: 500,
-            fontFamily: `Helvetica`,
-            color: "text.primary",
-            textAlign: { xs: "center", md: "start" },
-          }}
+        /> */}
+
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.2 }}
         >
-          <strong>Coinucopia.finance</strong> is the ultimate Telegram-native
-          bot that lets you launch, manage, and grow memecoins—straight from
-          your phone. No devs. No dashboards. Just good times.
-        </Typography>
+          <motion.img
+            src={HERO_IMAGE}
+            alt="hero"
+            initial={{ opacity: 0, scale: 0.95 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.8 }}
+            style={{ height: "auto", width: "100%", maxWidth: 431 }}
+          />
+          <Typography
+            sx={{
+              mt: 4,
+              fontSize: { xs: "1rem", md: "1.5rem" },
+              maxWidth: 500,
+              fontFamily: `Helvetica`,
+              color: "text.primary",
+              textAlign: { xs: "center", md: "start" },
+            }}
+          >
+            <strong>Coinucopia.finance</strong> is the ultimate Telegram-native
+            bot that lets you launch, manage, and grow memecoins—straight from
+            your phone. No devs. No dashboards. Just good times.
+          </Typography>
+        </motion.div>
       </Grid>
     </Grid>
   );
