@@ -50,10 +50,11 @@ const Footer = () => {
 
             <Typography
               sx={{
-                fontSize: 16,
+                fontSize: 18,
                 fontWeight: 600,
                 color: "#B2842B",
                 mb: 1,
+                fontFamily: "Helvetica",
               }}
             >
               Follow Us
@@ -92,6 +93,7 @@ const Footer = () => {
                 fontWeight: 700,
                 fontSize: 16,
                 mb: 3,
+                fontFamily: "Helvetica",
               }}
             >
               coinucopia.finance@support.com
@@ -102,6 +104,7 @@ const Footer = () => {
                 color: "#B2842B",
                 fontSize: 14,
                 fontWeight: 600,
+                fontFamily: "Helvetica",
               }}
             >
               © 2025 Powered by UXly Software
