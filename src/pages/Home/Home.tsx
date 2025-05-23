@@ -6,6 +6,7 @@ import Features from "@coinucopia/sections/Features";
 import { Box, Stack } from "@mui/material";
 import HowItWorks from "@coinucopia/sections/HowItWorks";
 import TelegramStar from "@coinucopia/sections/TelegramStar";
+import TryBot from "@coinucopia/sections/TryBot";
 
 const Home: React.FC = () => {
   return (
@@ -17,6 +18,7 @@ const Home: React.FC = () => {
         <Features />
         <HowItWorks />
         <TelegramStar />
+        <TryBot />
       </Stack>
     </Box>
   );
