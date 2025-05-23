@@ -61,6 +61,7 @@ const TryBot = () => {
             alignItems={{ xs: "center", md: "flex-start" }}
             gap={2}
             flexDirection={{ xs: "column", md: "row" }}
+            width={{ xs: "100%", md: "max-content" }}
           >
             <Link
               href={ONESHOT_TELEGRAM_LINK}
