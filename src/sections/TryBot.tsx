@@ -1,8 +1,9 @@
-import { Box, Typography, Grid } from "@mui/material";
+import { Box, Typography, Grid, Link } from "@mui/material";
 import MOUSE from "@coinucopia/assets/mouse.svg";
 import IMAGE from "@coinucopia/assets/hero-image.png";
 import { motion } from "framer-motion";
 import { CoinucopiaButton } from "@coinucopia/components";
+import { ONESHOT_TELEGRAM_LINK } from "@coinucopia/constants/constants";
 
 const MotionBox = motion(Box);
 const MotionButton = motion(CoinucopiaButton);
@@ -61,19 +62,27 @@ const TryBot = () => {
             gap={2}
             flexDirection={{ xs: "column", md: "row" }}
           >
-            <MotionButton
-              variantType="filled"
-              fullWidth
-              whileHover={{ scale: 1.04 }}
-              whileTap={{ scale: 0.97 }}
-              sx={{
-                fontSize: { xs: 16, md: 20 },
-                width: { xs: "100%", md: "auto" },
-                padding: { xs: ".6rem 1rem" },
-              }}
+            <Link
+              href={ONESHOT_TELEGRAM_LINK}
+              target="_blank"
+              rel="noopener noreferrer"
+              underline="none"
+              sx={{ display: "inline-block", width: "100%" }}
             >
-              Install Now on Telegram
-            </MotionButton>
+              <MotionButton
+                variantType="filled"
+                fullWidth
+                whileHover={{ scale: 1.04 }}
+                whileTap={{ scale: 0.97 }}
+                sx={{
+                  fontSize: { xs: 16, md: 20 },
+                  width: { xs: "100%", md: "auto" },
+                  padding: { xs: ".6rem 1rem" },
+                }}
+              >
+                Install Now on Telegram
+              </MotionButton>
+            </Link>
             <motion.img
               src={MOUSE}
               alt="mouse"

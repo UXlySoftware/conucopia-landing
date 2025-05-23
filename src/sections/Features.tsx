@@ -4,6 +4,7 @@ import {
   useTheme,
   useMediaQuery,
   Divider,
+  Link,
 } from "@mui/material";
 import RAT1 from "@coinucopia/assets/rat-1.svg";
 import RAT2 from "@coinucopia/assets/rat-2.svg";
@@ -13,6 +14,10 @@ import BLUE_GLOW from "@coinucopia/assets/blue-glow.svg";
 import ARROW from "@coinucopia/assets/arrow.svg";
 import GLOW from "@coinucopia/assets/glow.svg";
 import { CoinucopiaButton } from "@coinucopia/components";
+import {
+  ONESHOT_MEMECOINS_LINK,
+  ONESHOT_TELEGRAM_LINK,
+} from "@coinucopia/constants/constants";
 
 const MotionBox = motion(Box);
 
@@ -98,22 +103,29 @@ const Features = () => {
         flexDirection={isMobile ? "column" : "row"}
         gap={isMobile ? 4 : 0}
       >
-        {/* Left: Button + Glow */}
         <Box position="relative" width={isMobile ? "100%" : "unset"}>
-          <MotionButton
-            variantType="filled"
-            fullWidth
-            whileHover={{ scale: 1.04 }}
-            whileTap={{ scale: 0.97 }}
-            sx={{
-              fontSize: { xs: 16, md: 20 },
-              width: { xs: "100%", md: "auto" },
-              padding: { xs: ".6rem 1rem" },
-              ml: isMobile ? 0 : 2,
-            }}
+          <Link
+            href={ONESHOT_MEMECOINS_LINK}
+            target="_blank"
+            rel="noopener noreferrer"
+            underline="none"
+            sx={{ display: "inline-block", width: "100%" }}
           >
-            Explore Memecoins
-          </MotionButton>
+            <MotionButton
+              variantType="filled"
+              fullWidth
+              whileHover={{ scale: 1.04 }}
+              whileTap={{ scale: 0.97 }}
+              sx={{
+                fontSize: { xs: 16, md: 20 },
+                width: { xs: "100%", md: "auto" },
+                padding: { xs: ".6rem 1rem" },
+                ml: isMobile ? 0 : 2,
+              }}
+            >
+              Explore Memecoins
+            </MotionButton>
+          </Link>
           <Box
             component="img"
             src={GLOW}

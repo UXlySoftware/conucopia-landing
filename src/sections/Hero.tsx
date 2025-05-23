@@ -5,6 +5,7 @@ import {
   Stack,
   useMediaQuery,
   useTheme,
+  Link,
 } from "@mui/material";
 import { CoinucopiaButton } from "@coinucopia/components";
 import GLOW from "@coinucopia/assets/glow.svg";
@@ -13,6 +14,7 @@ import TELEGRAM from "@coinucopia/assets/telegram.svg";
 import HERO_IMAGE from "@coinucopia/assets/hero-image.png";
 import BLUE_ARROW from "@coinucopia/assets/blue-arrow.svg";
 import { motion } from "framer-motion";
+import { ONESHOT_TELEGRAM_LINK } from "@coinucopia/constants/constants";
 
 const MotionButton = motion(CoinucopiaButton);
 
@@ -81,19 +83,27 @@ const Hero = () => {
               </Typography>
 
               <Stack>
-                <MotionButton
-                  variantType="filled"
-                  fullWidth
-                  whileHover={{ scale: 1.04 }}
-                  whileTap={{ scale: 0.97 }}
-                  sx={{
-                    fontSize: { xs: 16, md: 20 },
-                    width: { xs: "100%", md: "auto" },
-                    padding: { xs: ".6rem 1rem" },
-                  }}
+                <Link
+                  href={ONESHOT_TELEGRAM_LINK}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  underline="none"
+                  sx={{ display: "inline-block", width: "100%" }}
                 >
-                  Install Now on Telegram
-                </MotionButton>
+                  <MotionButton
+                    variantType="filled"
+                    fullWidth
+                    whileHover={{ scale: 1.04 }}
+                    whileTap={{ scale: 0.97 }}
+                    sx={{
+                      fontSize: { xs: 16, md: 20 },
+                      width: { xs: "100%", md: "auto" },
+                      padding: { xs: ".6rem 1rem" },
+                    }}
+                  >
+                    Install Now on Telegram
+                  </MotionButton>
+                </Link>
                 {!isMobile && (
                   <Box position="relative" display="inline-block">
                     <Box

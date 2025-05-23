@@ -1,8 +1,16 @@
 import TOKEN_CREATOR_LOGO from "@coinucopia/assets/token-creator-logo.svg";
 import BLACK_GLOW from "@coinucopia/assets/black-glow.svg";
-import { Box, Typography, Grid, useTheme, useMediaQuery } from "@mui/material";
+import {
+  Box,
+  Typography,
+  Grid,
+  useTheme,
+  useMediaQuery,
+  Link,
+} from "@mui/material";
 import { CoinucopiaButton } from "@coinucopia/components";
 import { motion } from "framer-motion";
+import { ONESHOT_TELEGRAM_LINK } from "@coinucopia/constants/constants";
 
 const MotionButton = motion(CoinucopiaButton);
 const MotionFeatureBox = motion(Box);
@@ -114,21 +122,27 @@ const TokeCreators = () => {
           </Grid>
         ))}
       </Grid>
-
-      <MotionButton
-        variantType="filled"
-        fullWidth
-        whileHover={{ scale: 1.04 }}
-        whileTap={{ scale: 0.97 }}
-        sx={{
-          fontSize: { xs: 16, md: 20 },
-          width: { xs: "100%", md: "auto" },
-          padding: { xs: ".6rem 1rem" },
-          mt: 5,
-        }}
+      <Link
+        href={ONESHOT_TELEGRAM_LINK}
+        target="_blank"
+        rel="noopener noreferrer"
+        underline="none"
       >
-        Create a Token Now
-      </MotionButton>
+        <MotionButton
+          variantType="filled"
+          fullWidth
+          whileHover={{ scale: 1.04 }}
+          whileTap={{ scale: 0.97 }}
+          sx={{
+            fontSize: { xs: 16, md: 20 },
+            width: { xs: "100%", md: "auto" },
+            padding: { xs: ".6rem 1rem" },
+            mt: 5,
+          }}
+        >
+          Create a Token Now
+        </MotionButton>
+      </Link>
     </Box>
   );
 };
