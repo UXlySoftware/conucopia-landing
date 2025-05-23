@@ -117,7 +117,14 @@ const Hero = () => {
                 )}
               </Stack>
             </Box>
-            {!isMobile && <Box component="img" src={ARROW} alt="arrow" />}
+            {!isMobile && (
+              <Box
+                component="img"
+                src={ARROW}
+                alt="arrow"
+                maxWidth={{ sm: 150, lg: "unset" }}
+              />
+            )}
           </Box>
         </motion.div>
       </Grid>

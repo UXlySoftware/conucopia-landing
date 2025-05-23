@@ -1,4 +1,4 @@
-import { Box, Typography, Grid } from "@mui/material";
+import { Box, Typography, Grid, useMediaQuery, useTheme } from "@mui/material";
 import { motion } from "framer-motion";
 import FOOTER_LOGO from "@coinucopia/assets/footer-logo.png";
 import LINKEDIN from "@coinucopia/assets/LinkedIn.svg";
@@ -8,6 +8,9 @@ import YOUTUBE from "@coinucopia/assets/Youtube.svg";
 const MotionBox = motion(Box);
 
 const Footer = () => {
+  const theme = useTheme();
+  const isMobile = useMediaQuery(theme.breakpoints.down("md"));
+
   return (
     <MotionBox
       initial={{ opacity: 0, y: 30 }}
@@ -25,9 +28,10 @@ const Footer = () => {
       <Grid
         container
         spacing={2}
-        alignItems="flex-start"
+        alignItems="center"
         justifyContent="space-between"
       >
+        {/* Left Column */}
         <Grid size={{ xs: 12, md: 6 }}>
           <motion.div
             initial={{ opacity: 0, x: -20 }}
@@ -37,8 +41,8 @@ const Footer = () => {
             style={{
               display: "flex",
               flexDirection: "column",
-              alignItems: "flex-start",
-              textAlign: "left",
+              alignItems: isMobile ? "center" : "flex-start",
+              textAlign: isMobile ? "center" : "left",
             }}
           >
             <Box
@@ -74,6 +78,7 @@ const Footer = () => {
             </Box>
           </motion.div>
         </Grid>
+
         <Grid size={{ xs: 12, md: 6 }}>
           <motion.div
             initial={{ opacity: 0, x: 20 }}
@@ -83,8 +88,8 @@ const Footer = () => {
             style={{
               display: "flex",
               flexDirection: "column",
-              alignItems: "flex-end",
-              textAlign: "right",
+              alignItems: isMobile ? "center" : "flex-end",
+              textAlign: isMobile ? "center" : "right",
             }}
           >
             <Typography
