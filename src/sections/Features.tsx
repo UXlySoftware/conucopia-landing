@@ -141,7 +141,8 @@ const Features = () => {
                 <motion.div
                   key={i}
                   initial={{ y: -50, opacity: 0 }}
-                  animate={{ y: topOffsets[i], opacity: 1 }}
+                  whileInView={{ y: topOffsets[i], opacity: 1 }}
+                  viewport={{ once: true, amount: 0.5 }}
                   transition={{
                     duration: 0.8,
                     delay: i * 0.2,
