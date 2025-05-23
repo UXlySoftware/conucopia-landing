@@ -130,13 +130,6 @@ const Hero = () => {
         justifyContent="center"
         alignItems="center"
       >
-        {/* <Box
-          component="img"
-          src={HERO_IMAGE}
-          alt="hero"
-          sx={{ height: { xs: 285, md: 372 }, width: { xs: 332, md: 431 } }}
-        /> */}
-
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}

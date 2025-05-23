@@ -6,7 +6,7 @@ const MotionTypography = motion(Typography);
 
 const WhyCoinucopia = () => {
   return (
-    <Grid container justifyContent="center" sx={{ my: { xs: 3, md: 10 } }}>
+    <Grid container justifyContent="center">
       <Grid size={12}>
         <MotionBox
           initial={{ opacity: 0, y: 30 }}
@@ -32,7 +32,6 @@ const WhyCoinucopia = () => {
           >
             Why Coinucopia.finance?
           </MotionTypography>
-
           <MotionTypography
             variant="subtitle1"
             fontWeight={700}
@@ -45,7 +44,6 @@ const WhyCoinucopia = () => {
           >
             Telegram is where Web3 lives. Coinucopia.finance is how it grows.
           </MotionTypography>
-
           <MotionTypography
             color="text.secondary"
             sx={{ fontSize: 18, fontFamily: "Helvetica" }}
