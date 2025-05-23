@@ -72,7 +72,7 @@ const TryBot = () => {
                 padding: { xs: ".6rem 1rem" },
               }}
             >
-              Explore Memecoins
+              Install Now on Telegram
             </MotionButton>
             <motion.img
               src={MOUSE}

@@ -1,12 +1,8 @@
+import { Box } from "@mui/material";
+import { motion } from "framer-motion";
 import React from "react";
-import { Container, Box } from "@mui/material";
 import LOGO from "@coinucopia/assets/Coinucopia-logo.png";
 import { CoinucopiaButton } from "@coinucopia/components";
-import { motion } from "framer-motion";
-
-type LayoutProps = {
-  children: React.ReactNode;
-};
 
 const MotionBox = motion(Box);
 
@@ -22,6 +18,7 @@ const Header: React.FC = () => {
         alignItems: "center",
         mb: 4,
       }}
+      mt={3}
     >
       <Box
         component={motion.img}
@@ -42,22 +39,4 @@ const Header: React.FC = () => {
     </MotionBox>
   );
 };
-
-const Layout = ({ children }: LayoutProps) => {
-  return (
-    <Box sx={{ minHeight: "100vh", backgroundColor: "background.default" }}>
-      <Container maxWidth="xl" sx={{ p: { xs: 2, md: 5 } }}>
-        <Header />
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
-        >
-          {children}
-        </motion.div>
-      </Container>
-    </Box>
-  );
-};
-
-export default Layout;
+export default Header;
