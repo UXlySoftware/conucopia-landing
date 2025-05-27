@@ -16,7 +16,6 @@ import GLOW from "@coinucopia/assets/glow.svg";
 import { CoinucopiaButton } from "@coinucopia/components";
 import {
   ONESHOT_MEMECOINS_LINK,
-  ONESHOT_TELEGRAM_LINK,
 } from "@coinucopia/constants/constants";
 
 const MotionBox = motion(Box);
